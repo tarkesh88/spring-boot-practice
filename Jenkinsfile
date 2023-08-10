@@ -19,7 +19,7 @@ pipeline{
 			/*bat '''
 				D:/Softwares/gradle-8.2.1-all/gradle-8.2.1/bin/gradle clean build
 			'''*/
-			//bat 'docker build --build-arg JAR_FILE=target/*.jar -t tarkesh88/jenkins-docker-hub-tr .'
+			//bat 'docker build --build-arg JAR_FILE=target/*.jar -t tarkesh88/jenkins-docker-hub-tr:latest .'
 			bat 'docker build -t tarkesh88/jenkins-docker-hub-tr .'
 			}
 		}
