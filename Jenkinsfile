@@ -3,6 +3,7 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS = credentials('docker')
 		}
+	
     agent any
     stages{
       stage('start'){
@@ -37,6 +38,4 @@ pipeline{
 			}
 		}
       
-     }
-    
 }
