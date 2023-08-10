@@ -30,7 +30,7 @@ pipeline{
 		}
       stage('Push') {
 		steps {
-			bat 'docker push tarkesh88/jenkins-docker-hub-tr'
+			bat 'docker push tarkesh88/jenkins-docker-hub-tr:latest'
 			}
 		}
 	}
