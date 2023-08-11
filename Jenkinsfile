@@ -2,6 +2,10 @@ pipeline{
 
     agent any
 
+	environment {
+		DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+		}
+
     stages{
       stage('start'){
 		steps{
@@ -31,9 +35,7 @@ pipeline{
 		}
 	  stage('Deploy') {
 		steps {
-			bat '''
-				echo 'deploy..'
-				'''
+			bat 'kubernetesDeploy(configs: "deployment.yaml", "service.yaml")'
 				
 			}
 		}	
