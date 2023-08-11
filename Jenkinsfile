@@ -33,7 +33,14 @@ pipeline{
 			bat 'docker push tarkesh88/jenkins-docker-hub-tr:latest'
 			}
 		}
-	}
+	  stage('Deploying to Kubernetes') {
+		steps {
+			script {
+				kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
+				}
+			}
+		}	
+		}
 	post {
 		always {
 			bat 'docker logout'
